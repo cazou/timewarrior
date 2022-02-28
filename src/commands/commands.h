@@ -68,5 +68,6 @@ int CmdChartDay      (const CLI&, Rules&, Database&                             
 int CmdChartWeek     (const CLI&, Rules&, Database&                             );
 int CmdChartMonth    (const CLI&, Rules&, Database&                             );
 int CmdSummary       (const CLI&, Rules&, Database&                             );
+int CmdTimesheet     (const CLI&, Rules&, Database&                             );
 
 #endif
