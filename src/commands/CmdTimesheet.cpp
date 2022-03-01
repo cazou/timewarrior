@@ -257,6 +257,9 @@ std::vector<TimeSheetEntry*> _build_entries(Datetime day, std::vector<Interval> 
         if ((track.is_open () && day > Datetime ()))
             continue;
 
+        if (track.empty())
+            continue;
+
         // TODO: Manage tasks on multiple days (although this is not recommendend behavior @Collabora)
 
         // Check if we have a Task or known category tag (Standup, Induction, Guild)
@@ -396,6 +399,9 @@ int CmdTimesheet (
         int row = -1;
 
         std::vector<TimeSheetEntry*> entries = _build_entries(day, tracked);
+
+        if (entries.empty())
+            continue;
 
         row = table.addRow();
         if (day != previous)
